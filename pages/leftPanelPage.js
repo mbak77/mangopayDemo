@@ -1,4 +1,5 @@
 import * as elements from '../locators/leftPanel'
+import {DRIVING_MODE_BUTTON} from "../locators/leftPanel";
 
 export class LeftPanelPage {
     constructor(page) {
@@ -11,6 +12,7 @@ export class LeftPanelPage {
         this.directions_button = elements.DIRECTIONS_BUTTON
         this.directions_table = elements.DIRECTIONS_TABLE
         this.address_field = elements.ADDRESS_FIELD
+        this.driving_mode_button = elements.DRIVING_MODE_BUTTON
     }
 
     async searchFor(destination) {
@@ -39,5 +41,8 @@ export class LeftPanelPage {
 
     async clickDirections() {
         await this.page.locator(this.directions_button).click();
+    }
+    async clickDrivingMode() {
+        await this.page.locator(this.driving_mode_button).click();
     }
 }
