@@ -25,7 +25,7 @@ the current directory in terminal):
 
 `--headed`- add parameter to run tests in headed mode
 
-Example command: `npx playwright test ./tests/googleMaps.spec.js --headed --project=chromium`
+**Example command:** `npx playwright test ./tests/googleMaps.spec.js --headed --project=chromium`
 
 ### Report
 
