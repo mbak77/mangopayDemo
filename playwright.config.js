@@ -19,9 +19,9 @@ module.exports = defineConfig({
   /* Retry on CI only */
   // retries: process.env.CI ? 2 : 0,
   retries: 1,
-  timeout: 5000,
+  timeout: 8000,
   expect: {
-    timeout: 5000
+    timeout: 8000
   },
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,

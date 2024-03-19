@@ -19,12 +19,14 @@ export class LeftPanelPage {
         await this.page.locator(this.searchbox_input_field).click();
         await this.page.locator(this.searchbox_input_field).fill(destination);
         await this.page.locator(this.searchbox_search_button).click();
+        await this.page.waitForLoadState('domcontentloaded')
     }
 
     async setStartingPoint(startingPoint) {
         await this.page.locator(this.searchbox_starting_point_field).click();
         await this.page.locator(this.searchbox_starting_point_field).fill(startingPoint);
         await this.page.locator(this.searchbox_starting_point_field).press('Enter');
+        await this.page.waitForLoadState('domcontentloaded')
     }
 
     async getHeadlineTitle() {

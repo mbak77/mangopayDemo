@@ -2,6 +2,8 @@ const { test, expect } = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
 
 /**
+ * Test is failing as it's discovering some accessibility issues.
+ *
  * Following pages were used:
  * https://playwright.dev/docs/accessibility-testing
  * https://www.npmjs.com/package/@axe-core/playwright

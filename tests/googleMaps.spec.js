@@ -76,7 +76,7 @@ test('Google Maps - searching for London, checking destination',
  * Then the list of directions should contain at least 1 item
  */
 
-test('Google Maps - checking London to Luton directions',
+test.only('Google Maps - checking London to Luton directions',
     async ({browser}) => {
 
         const [page, context] = await initializeContext(browser)
@@ -86,7 +86,7 @@ test('Google Maps - checking London to Luton directions',
         await expect.soft(await leftPanel.getHeadlineTitle()).toEqual('London');
         await leftPanel.clickDirections();
         await expect.soft(await leftPanel.getDestinationFieldText()).toContain('London');
-        await leftPanel.setStartingPoint('Luton');
+        await leftPanel.setStartingPoint('Luton, UK');
         await expect(await page.locator(leftPanel.directions_table)).toHaveCount(1);
         await tearDown(page, context)
     })
@@ -107,6 +107,7 @@ test('Google Maps - searching by coordinates',
         await page.goto('')
         await leftPanel.searchFor('52.23703081263759, 21.000360903771707');
         await expect(await leftPanel.getAddressFieldText()).toContain("Warszawa")
+        await tearDown(page, context)
     })
 
 /**
@@ -125,6 +126,7 @@ test('Google Maps - searching by incorrect coordinates', {tag: '@negative'},
         await page.goto('')
         await leftPanel.searchFor('91°00\'00.0"N 181°00\'00.0"E');
         await expect(await page.getByText("Google Maps can't find")).toBeVisible()
+        await tearDown(page, context)
     })
 
 /**

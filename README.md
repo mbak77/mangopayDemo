@@ -21,7 +21,11 @@ the current directory in terminal):
 
 `npx playwright test ./tests/` - if you want run all the tests at once
 
-`npx playwright test ./tests/<testFile> --project=chromium --headed` - add following parameters to run headed tests on 1 browser only
+`--project=chromium` - add parameter to run tests on 1 browser only
+
+`--headed`- add parameter to run tests in headed mode
+
+Example command: `npx playwright test ./tests/googleMaps.spec.js --headed --project=chromium`
 
 ### Report
 
